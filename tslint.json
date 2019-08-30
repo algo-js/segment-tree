@@ -15,14 +15,14 @@
     // Immutability rules
     "readonly-keyword": true,
     "readonly-array": false,
-    "no-let": true,
+    "no-let": false,
     "no-object-mutation": true,
-    "no-delete": true,
+    "no-delete": false,
     "no-method-signature": true,
 
     // Functional style rules
-    "no-this": true,
-    "no-class": true,
+    "no-this": false,
+    "no-class": false,
     "no-mixed-interface": true,
     "no-expression-statement": [
       true,
@@ -33,6 +33,7 @@
     "no-unused-variable": false,
     "no-unused-expression": false,
     "no-unused-locals": false,
+    "no-console": false,
     "prefer-for-of": false
     /* end tslint-immutable rules */
   }
