@@ -93,10 +93,16 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="segmenttree.html#tree" class="tsd-kind-icon">tree</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="segmenttree.html#buildtree" class="tsd-kind-icon">build<wbr>Tree</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="segmenttree.html#buildtreerecursively" class="tsd-kind-icon">build<wbr>Tree<wbr>Recursively</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="segmenttree.html#computeleftchildindex" class="tsd-kind-icon">compute<wbr>Left<wbr>Child<wbr>Index</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="segmenttree.html#computerightchildindex" class="tsd-kind-icon">compute<wbr>Right<wbr>Child<wbr>Index</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="segmenttree.html#createtree" class="tsd-kind-icon">create<wbr>Tree</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="segmenttree.html#query" class="tsd-kind-icon">query</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="segmenttree.html#queryrecursive" class="tsd-kind-icon">query<wbr>Recursive</a></li>
 							</ul>
 						</section>
 					</div>
@@ -114,7 +120,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/434a22b/src/lib/segment-tree/segment-tree.ts#L33">lib/segment-tree/segment-tree.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L33">lib/segment-tree/segment-tree.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -129,11 +135,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__type</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">__type</span></h4>
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 												</li>
 											</ul>
 										</li>
@@ -160,7 +172,7 @@
 					<div class="tsd-signature tsd-kind-icon">fallback<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/434a22b/src/lib/segment-tree/segment-tree.ts#L26">lib/segment-tree/segment-tree.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L26">lib/segment-tree/segment-tree.ts:26</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -180,7 +192,7 @@
 					<div class="tsd-signature tsd-kind-icon">input<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/434a22b/src/lib/segment-tree/segment-tree.ts#L10">lib/segment-tree/segment-tree.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L10">lib/segment-tree/segment-tree.ts:10</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -200,7 +212,7 @@
 					<div class="tsd-signature tsd-kind-icon">operation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/434a22b/src/lib/segment-tree/segment-tree.ts#L18">lib/segment-tree/segment-tree.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L18">lib/segment-tree/segment-tree.ts:18</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -209,7 +221,7 @@
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>type</dt>
-							<dd><p>{function}</p>
+							<dd><p>{function&lt;*&gt;}</p>
 							</dd>
 						</dl>
 					</div>
@@ -218,11 +230,17 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__type</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">__type</span></h4>
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 									</li>
 								</ul>
 							</li>
@@ -235,7 +253,7 @@
 					<div class="tsd-signature tsd-kind-icon">tree<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/434a22b/src/lib/segment-tree/segment-tree.ts#L33">lib/segment-tree/segment-tree.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L33">lib/segment-tree/segment-tree.ts:33</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -250,8 +268,122 @@
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="buildtree" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> build<wbr>Tree</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Tree<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L97">lib/segment-tree/segment-tree.ts:97</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Build segment tree.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="buildtreerecursively" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> build<wbr>Tree<wbr>Recursively</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Tree<wbr>Recursively<span class="tsd-signature-symbol">(</span>leftIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, rightIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, position<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L111">lib/segment-tree/segment-tree.ts:111</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Build segment tree recursively.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>leftIndex: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>rightIndex: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> position: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="computeleftchildindex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> compute<wbr>Left<wbr>Child<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">compute<wbr>Left<wbr>Child<wbr>Index<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L200">lib/segment-tree/segment-tree.ts:200</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Computes left child index</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="computerightchildindex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> compute<wbr>Right<wbr>Child<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">compute<wbr>Right<wbr>Child<wbr>Index<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L210">lib/segment-tree/segment-tree.ts:210</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Computes right child index</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a name="createtree" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> create<wbr>Tree</h3>
@@ -262,10 +394,98 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/434a22b/src/lib/segment-tree/segment-tree.ts#L48">lib/segment-tree/segment-tree.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L76">lib/segment-tree/segment-tree.ts:76</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="query" class="tsd-anchor"></a>
+					<h3>query</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">query<span class="tsd-signature-symbol">(</span>queryLeftIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, queryRightIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L61">lib/segment-tree/segment-tree.ts:61</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Query on segment tree in context of this.operation function</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>queryLeftIndex: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>queryRightIndex: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="queryrecursive" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> query<wbr>Recursive</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">query<wbr>Recursive<span class="tsd-signature-symbol">(</span>queryLeftIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, queryRightIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, leftIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, rightIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, position<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/algo-js/segment-tree/blob/c96a255/src/lib/segment-tree/segment-tree.ts#L155">lib/segment-tree/segment-tree.ts:155</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Query on segment tree recursively in context of this.operation function</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>queryLeftIndex: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>left index of the query</p>
+									</div>
+								</li>
+								<li>
+									<h5>queryRightIndex: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>right index of the query</p>
+									</div>
+								</li>
+								<li>
+									<h5>leftIndex: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>left index of input array segment</p>
+									</div>
+								</li>
+								<li>
+									<h5>rightIndex: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>right index of input array segment</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> position: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>root position in binary tree</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -302,7 +522,25 @@
 								<a href="segmenttree.html#tree" class="tsd-kind-icon">tree</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="segmenttree.html#buildtree" class="tsd-kind-icon">build<wbr>Tree</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="segmenttree.html#buildtreerecursively" class="tsd-kind-icon">build<wbr>Tree<wbr>Recursively</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="segmenttree.html#computeleftchildindex" class="tsd-kind-icon">compute<wbr>Left<wbr>Child<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="segmenttree.html#computerightchildindex" class="tsd-kind-icon">compute<wbr>Right<wbr>Child<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="segmenttree.html#createtree" class="tsd-kind-icon">create<wbr>Tree</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="segmenttree.html#query" class="tsd-kind-icon">query</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="segmenttree.html#queryrecursive" class="tsd-kind-icon">query<wbr>Recursive</a>
 							</li>
 						</ul>
 					</li>
