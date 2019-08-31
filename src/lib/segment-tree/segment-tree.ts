@@ -7,7 +7,7 @@ export class SegmentTree {
    * @type {number[]}
    * @private
    */
-  private input: number[] = [];
+  private readonly input: number[] = [];
 
   /**
    * Operation function
@@ -15,7 +15,7 @@ export class SegmentTree {
    * @type {function<*>}
    * @private
    */
-  private operation: (...args) => number;
+  private readonly operation: (...args) => number;
 
   /**
    * Fallback value for non-intersect intervals
@@ -23,14 +23,14 @@ export class SegmentTree {
    * @type {function}
    * @private
    */
-  private fallbackValue: number = 0;
+  private readonly fallbackValue: number = 0;
 
   /**
    * Tree instance
    *
    * @type {number[]}
    */
-  private tree: number[] = null;
+  private readonly tree: number[] = null;
 
   /**
    * @param {number[]} input
@@ -48,7 +48,9 @@ export class SegmentTree {
 
     this.tree = this.createTree();
 
-    this.buildTree();
+    if (input.length) {
+      this.buildTree();
+    }
   }
 
   /**
@@ -58,16 +60,30 @@ export class SegmentTree {
    * @param {number} queryRightIndex
    * @return {number}
    */
-  public query(queryLeftIndex, queryRightIndex): number {
-    const leftIndex = 0;
-    const rightIndex = this.input.length - 1;
+  public query(
+    queryLeftIndex = 0,
+    queryRightIndex = this.input.length - 1
+  ): number {
+    const minIndex = 0;
+    const maxIndex = this.input.length - 1;
 
-    return this.queryRecursive(
-      queryLeftIndex,
-      queryRightIndex,
-      leftIndex,
-      rightIndex
-    );
+    if (
+      (queryLeftIndex < minIndex && queryRightIndex < minIndex) ||
+      (queryLeftIndex > maxIndex && queryRightIndex > maxIndex)
+    ) {
+      return this.fallbackValue;
+    }
+
+    if (queryLeftIndex > queryRightIndex) {
+      const tmp = queryLeftIndex;
+      queryLeftIndex = queryRightIndex;
+      queryRightIndex = tmp;
+    }
+
+    queryLeftIndex = Math.max(0, Math.min(maxIndex, queryLeftIndex));
+    queryRightIndex = Math.max(0, Math.min(maxIndex, queryRightIndex));
+
+    return this.queryRecursive(queryLeftIndex, queryRightIndex);
   }
 
   /**
@@ -153,12 +169,16 @@ export class SegmentTree {
    * @return {number}
    */
   private queryRecursive(
-    queryLeftIndex,
-    queryRightIndex,
-    leftIndex,
-    rightIndex,
+    queryLeftIndex = 0,
+    queryRightIndex = this.input.length - 1,
+    leftIndex = 0,
+    rightIndex = this.input.length - 1,
     position = 0
   ): number {
+    if (!this.tree.length) {
+      return this.fallbackValue;
+    }
+
     if (queryLeftIndex <= leftIndex && queryRightIndex >= rightIndex) {
       // Total overlap
       return this.tree[position];
