@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@algo-js/core@^1.0.21":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@algo-js/core/-/core-1.0.21.tgz#6aa375a0768ad6159be33e44b88644ee8cae1bab"
-  integrity sha512-a2nv+LawY1hJHr+RhThVvjQfaeCen0oACvAM0EDzNuCTwgTYhwje9WvELmRUo8T61O+lXDIs0WXlV7TkmjM66g==
+"@algo-js/core@^1.0.25":
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/@algo-js/core/-/core-1.0.25.tgz#e04faf4530c4d5a9eb714a2d648a618e3d3eece7"
+  integrity sha512-p8ELi+XPPBJLvUKrZu2suOcyHvquOZkKNWWfyZ6/Qs9acKKHbo6wu4HyiLfRyreBNzReoVsRvD3KGK8GXODYqw==
 
 "@ava/babel-plugin-throws-helper@^3.0.0":
   version "3.0.0"

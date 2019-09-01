@@ -49,7 +49,7 @@
     "node": ">=8.9"
   },
   "devDependencies": {
-    "@algo-js/core": "^1.0.21",
+    "@algo-js/core": "^1.0.25",
     "@bitjson/npm-scripts-info": "^1.0.0",
     "ava": "2.2.0",
     "codecov": "^3.5.0",
