@@ -152,11 +152,11 @@ test('updates specific indexes and returns correct sums', t => {
   }
 });
 
-test('random updates', t => {
+test('random updates (sum)', t => {
   const largeInputCopy = largeInput.slice();
   const tree = new SegmentTree(largeInput, (a, b) => a + b);
 
-  const testCases = 1e7;
+  const testCases = 1e6;
 
   for (let i = 0; i < testCases; ++i) {
     const randomIndex = generateNumber(0, largeInput.length - 1);
@@ -168,5 +168,43 @@ test('random updates', t => {
   t.is(
     tree.query(),
     findSumLinear(largeInputCopy, 0, largeInputCopy.length - 1)
+  );
+});
+
+test('random updates (max)', t => {
+  const largeInputCopy = largeInput.slice();
+  const tree = new SegmentTree(largeInput, Math.max);
+
+  const testCases = 1e6;
+
+  for (let i = 0; i < testCases; ++i) {
+    const randomIndex = generateNumber(0, largeInput.length - 1);
+    const randomValue = generateNumber(-1e7, 1e7);
+    tree.update(randomIndex, randomValue, false);
+    largeInputCopy[randomIndex] = randomValue;
+  }
+
+  t.is(
+    tree.query(),
+    findMaxLinear(largeInputCopy, 0, largeInputCopy.length - 1)
+  );
+});
+
+test('random updates (min)', t => {
+  const largeInputCopy = largeInput.slice();
+  const tree = new SegmentTree(largeInput, Math.min);
+
+  const testCases = 1e6;
+
+  for (let i = 0; i < testCases; ++i) {
+    const randomIndex = generateNumber(0, largeInput.length - 1);
+    const randomValue = generateNumber(-1e7, 1e7);
+    tree.update(randomIndex, randomValue, false);
+    largeInputCopy[randomIndex] = randomValue;
+  }
+
+  t.is(
+    tree.query(),
+    findMinLinear(largeInputCopy, 0, largeInputCopy.length - 1)
   );
 });
