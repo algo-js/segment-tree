@@ -33,6 +33,9 @@ export class SegmentTree {
   private readonly tree: number[] = null;
 
   /**
+   * Creates and builds segment tree
+   * Time complexity: O(n)
+   *
    * @param {number[]} input
    * @param {function} operation
    * @param {number} fallbackValue
@@ -55,14 +58,15 @@ export class SegmentTree {
 
   /**
    * Query on segment tree in context of this.operation function
+   * Time complexity: O(log(n))
    *
    * @param {number} queryLeftIndex
    * @param {number} queryRightIndex
    * @return {number}
    */
   public query(
-    queryLeftIndex = 0,
-    queryRightIndex = this.input.length - 1
+    queryLeftIndex: number = 0,
+    queryRightIndex: number = this.input.length - 1
   ): number {
     const minIndex = 0;
     const maxIndex = this.input.length - 1;
@@ -84,6 +88,34 @@ export class SegmentTree {
     queryRightIndex = Math.max(0, Math.min(maxIndex, queryRightIndex));
 
     return this.queryRecursive(queryLeftIndex, queryRightIndex);
+  }
+
+  /**
+   * Updates element of input array
+   * Time complexity: O(log(n))
+   *
+   * Current version of recursive algorithm
+   * is much faster than iterative
+   *
+   * @param {number} inputIndex
+   * @param {number} newValue
+   * @param {boolean} recursive
+   */
+  public update(
+    inputIndex: number,
+    newValue: number,
+    recursive: boolean = true
+  ): void {
+    const minIndex = 0;
+    const maxIndex = this.input.length - 1;
+
+    if (inputIndex < minIndex || inputIndex > maxIndex) {
+      return;
+    }
+
+    return recursive
+      ? this.updateRecursive(inputIndex, newValue)
+      : this.updateIterative(inputIndex, newValue);
   }
 
   /**
@@ -124,7 +156,11 @@ export class SegmentTree {
    * @param {number} rightIndex
    * @param {number} position
    */
-  private buildTreeRecursively(leftIndex, rightIndex, position = 0): void {
+  private buildTreeRecursively(
+    leftIndex: number,
+    rightIndex: number,
+    position: number = 0
+  ): void {
     // If low input index and high input index are equal that would mean
     // the we have finished splitting and we are already came to the leaf
     // of the segment tree. We need to copy this leaf value from input
@@ -134,7 +170,7 @@ export class SegmentTree {
     }
 
     // Split input array on two halves and process them recursively.
-    const middleIndex = (leftIndex + rightIndex) >> 1;
+    const middleIndex = leftIndex + ((rightIndex - leftIndex) >> 1);
 
     // Process left half of the input array.
     this.buildTreeRecursively(
@@ -169,11 +205,11 @@ export class SegmentTree {
    * @return {number}
    */
   private queryRecursive(
-    queryLeftIndex = 0,
-    queryRightIndex = this.input.length - 1,
-    leftIndex = 0,
-    rightIndex = this.input.length - 1,
-    position = 0
+    queryLeftIndex: number = 0,
+    queryRightIndex: number = this.input.length - 1,
+    leftIndex: number = 0,
+    rightIndex: number = this.input.length - 1,
+    position: number = 0
   ): number {
     if (!this.tree.length) {
       return this.fallbackValue;
@@ -209,6 +245,87 @@ export class SegmentTree {
     );
 
     return this.operation(leftOperationResult, rightOperationResult);
+  }
+
+  /**
+   * @param {number} inputIndex
+   * @param {number} newValue
+   * @param {number} leftIndex
+   * @param {number} rightIndex
+   * @param {number} position
+   */
+  private updateRecursive(
+    inputIndex: number,
+    newValue: number,
+    leftIndex: number = 0,
+    rightIndex: number = this.input.length - 1,
+    position: number = 0
+  ): void {
+    if (leftIndex === rightIndex) {
+      return void (this.tree[position] = newValue);
+    }
+
+    const middleIndex = leftIndex + ((rightIndex - leftIndex) >> 1);
+    let newPosition = null;
+
+    if (inputIndex <= middleIndex) {
+      rightIndex = middleIndex;
+      newPosition = this.computeLeftChildIndex(position);
+    } else {
+      leftIndex = middleIndex + 1;
+      newPosition = this.computeRightChildIndex(position);
+    }
+
+    this.updateRecursive(
+      inputIndex,
+      newValue,
+      leftIndex,
+      rightIndex,
+      newPosition
+    );
+
+    this.tree[position] = this.operation(
+      this.tree[this.computeLeftChildIndex(position)],
+      this.tree[this.computeRightChildIndex(position)]
+    );
+  }
+
+  /**
+   * @param {number} inputIndex
+   * @param {number} newValue
+   * @param {number} leftIndex
+   * @param {number} rightIndex
+   * @param {number} position
+   */
+  private updateIterative(
+    inputIndex: number,
+    newValue: number,
+    leftIndex: number = 0,
+    rightIndex: number = this.input.length - 1,
+    position: number = 0
+  ): void {
+    while (leftIndex < rightIndex) {
+      const middleIndex = leftIndex + ((rightIndex - leftIndex) >> 1);
+
+      if (inputIndex <= middleIndex) {
+        rightIndex = middleIndex;
+        position = this.computeLeftChildIndex(position);
+      } else {
+        leftIndex = middleIndex + 1;
+        position = this.computeRightChildIndex(position);
+      }
+    }
+
+    this.tree[position] = newValue;
+
+    while (position) {
+      position = (position & 1 ? position - 1 : position - 2) >> 1;
+
+      this.tree[position] = this.operation(
+        this.tree[this.computeLeftChildIndex(position)],
+        this.tree[this.computeRightChildIndex(position)]
+      );
+    }
   }
 
   /**
