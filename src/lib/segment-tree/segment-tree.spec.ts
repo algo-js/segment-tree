@@ -6,7 +6,7 @@ import {
   findSumLinear,
   generateIndexPair,
   generateNumber
-} from '../../utils/test/helpers';
+} from '../../utils/tests/helpers';
 import { SegmentTree } from './segment-tree';
 
 const input = [1, 2, 3, 4, -1, 2, -2, -3, -4, 10, -10];
